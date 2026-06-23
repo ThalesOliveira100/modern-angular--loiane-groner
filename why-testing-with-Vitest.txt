@@ -1,0 +1,7 @@
+Angular now ships with Vitest as the default test runner, instead of Jasmine and Karma.
+This means:
+	- faster tests;
+	- better developer experience;
+	- modern tooling out of the box.
+
+But it also means Angular is stricter about template coverage. How we write tests needs to change.

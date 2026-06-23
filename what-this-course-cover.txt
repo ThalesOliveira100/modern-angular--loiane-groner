@@ -1,0 +1,10 @@
+* Angular building blocks
+	- Standalone Components, Templates, Directives
+* Signals-first state management and reactivity
+* Built-in control flow: @if, @for, and @switch
+* Routing with functional guards and lazy loading
+* Forms and validation using modern Angular patterns
+* Performance features like deferrable views
+* Modern testing with Vitest
+* Migration older Angular apps to Angular v2x
+* And more!?
