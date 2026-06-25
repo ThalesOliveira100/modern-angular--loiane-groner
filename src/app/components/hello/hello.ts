@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
-import { debounce } from 'rxjs';
 
 @Component({
   selector: 'app-hello',
@@ -10,11 +9,24 @@ import { debounce } from 'rxjs';
 })
 export class Hello {
   protected title = 'Bem vindo ao Angular Moderno';
-  protected clickCount = signal(0);
+  protected clickCounter = signal(0);
   protected isDisabled = signal(false);
 
-  protected onClick() {
-    this.clickCount.set(this.clickCount() + 1);
+  protected onClick(): void {
     this.isDisabled.set(!this.isDisabled());
+  }
+
+  // Dá pra fazer assim e da forma utilizada no decreaseCounter.
+  protected increateCounter(): void {
+    this.clickCounter.set(this.clickCounter() + 1);
+  }
+
+  // É possível utilizar o update para utilizar uma callback
+  protected decreaseCounter(): void {
+    this.clickCounter.update((value) => value -1);
+  }
+
+  protected resetCounter(): void {
+    this.clickCounter.set(0);
   }
 }
