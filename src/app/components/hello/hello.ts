@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -10,6 +10,7 @@ import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 export class Hello {
   protected title = 'Bem vindo ao Angular Moderno';
   protected clickCounter = signal(0);
+  protected doubleCount = computed(() => this.clickCounter() * 2);
   protected isDisabled = signal(false);
 
   protected onClick(): void {
