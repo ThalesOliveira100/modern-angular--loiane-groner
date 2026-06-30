@@ -28,7 +28,8 @@ export class ProductsGrid {
       id: 3,
       nome: 'Microfone Portátil Bluetooth',
       descricao: 'Um microfone compacto com bateria duradoura de até 12 horas.',
-      preco: 79.00
+      preco: 79.00,
+      precoOriginal: 99.99
     }
   ]);
 }
