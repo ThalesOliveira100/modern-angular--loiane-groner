@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product } from '../product';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,6 +38,16 @@ export class ProductsGrid {
       precoOriginal: 99.99
     }
   ]);
+
+  protected readonly filteredProducts = computed(() => {
+    const term = this.searchTerm().toLowerCase().trim();
+    if (!term) return this.products();
+
+    return this.products().filter((product) =>
+      product.nome.toLocaleLowerCase().includes(term) ||
+      product.descricao.toLocaleLowerCase().includes(term)
+    );
+  });
 
   protected clearSearch(): void {
     this.searchTerm.set('');
