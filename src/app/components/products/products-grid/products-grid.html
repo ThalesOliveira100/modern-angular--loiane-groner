@@ -11,16 +11,15 @@
     </p>
   }
 
-  <p>Total de produtos: {{ products().length }}</p>
+  <p>Total de produtos: {{ filteredProducts().length }}</p>
 
   <div class="products-grid">
-    @for (product of products(); track product.id) {
+    @for (product of filteredProducts(); track product.id) {
       <app-product-card [product]="product" />
     } @empty {
       <div class="empty-state">
         <mat-icon>inventory_2</mat-icon>
-        <h3>Nenhum produto encontrado</h3>
-        <p>Verifique mais tarde para novidades!</p>
+        <p>Nenhum resultado foi encontrado</p>
       </div>
     }
   </div>
