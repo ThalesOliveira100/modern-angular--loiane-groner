@@ -1,4 +1,16 @@
 <div class="products-container">
+
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Buscar produtos, marcas e muito mais</mat-label>
+    <input matInput [(ngModel)]="searchTerm" placeholder="e.g. fones de ouvido" />
+  </mat-form-field>
+
+  @if (searchTerm().trim() != '') {
+    <p class="search-preview">
+      Resultado de pesquisa para: "{{ searchTerm() }}"
+    </p>
+  }
+
   <p>Total de produtos: {{ products().length }}</p>
 
   <div class="products-grid">
