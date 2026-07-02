@@ -56,4 +56,8 @@ export class ProductsGrid {
   protected trimSearch(): void {
     this.searchTerm.update((value) => value.trim());
   };
+
+  protected onAddToCard(product: Product) {
+    
+  }
 }
